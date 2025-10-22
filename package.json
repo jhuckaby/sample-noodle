@@ -1,9 +1,11 @@
 {
 	"name": "sample-noodle",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A very simple app to demo the capabilities of PoolNoodle.",
 	"main": "api.js",
-	"bin": "install.sh",
+	"bin": {
+		"sample-noodle": "./install.sh"
+	},
 	"keywords": [
 		"poolnoodle",
 		"application"
