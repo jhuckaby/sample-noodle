@@ -2,7 +2,8 @@
 set -e
 
 # Absolute path to the script's directory
-DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_PATH="$(readlink -f "$0" 2>/dev/null || realpath "$0")"
+DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
 
 echo "Running from: $DIR"
 echo "Current working dir: $(pwd)"
