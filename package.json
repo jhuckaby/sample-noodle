@@ -1,0 +1,23 @@
+{
+	"name": "sample-noodle",
+	"version": "1.0.0",
+	"description": "A very simple app to demo the capabilities of PoolNoodle.",
+	"main": "api.js",
+	"bin": "install.sh",
+	"keywords": [
+		"poolnoodle",
+		"application"
+	],
+	"author": "Joseph Huckaby",
+	"license": "MIT",
+	"dependencies": {
+		"async": "2.6.4"
+	},
+	"pool": "default",
+	"routes": {
+		"^/sample-app/api": "api.js"
+	},
+	"static": {
+		"^/sample-app": "htdocs"
+	}
+}

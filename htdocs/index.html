@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Sample Noodle</title>
+		<style>
+			html, body {
+				font-family: system-ui, sans-serif;
+			}
+			.user_welcome_banner {
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			pre.api_results {
+				margin-top: 10px;
+				padding: 10px;
+				border: 1px solid #ddd;
+			}
+		</style>
+		<script>
+			var $ = function(sel) {
+				var elem = document.querySelector(sel);
+				if (elem) {
+					elem.html = function(html) { elem.innerHTML = html; return elem; };
+					elem.show = function() { elem.style.display = ''; return elem; };
+					elem.hide = function() { elem.style.display = 'none'; return elem; };
+				}
+				return elem;
+			};
+			
+			var app = {
+				
+				getStuff: function() {
+					// fetch JSON data from our API
+					window.fetch('/sample-app/api?foo=bar', {})
+						.then( function(res) {
+							if (!res.ok) throw new Error("HTTP " + res.status + " " + res.statusText);
+							return res.json();
+						} )
+						.then(function(json) {
+							// got response, just show the JSON
+							$('pre.api_results').show().html( JSON.stringify(json, null, "    ") );
+						} )
+						.catch( function(err) {
+							// HTTP error
+							var html = '';
+							html += '<h2>HTTP Error: ' + (err.message || err) + '</h2>';
+							$('#page').html( html );
+						} );
+				}
+			}; // app
+		</script>
+	</head>
+	<body>
+		
+		<h1>Sample Noodle</h1>
+		
+		<div id="page">
+			<button onClick="app.getStuff()">API Request...</button>
+			<pre class="api_results" style="display:none"></pre>
+		</div>
+		
+</html>
