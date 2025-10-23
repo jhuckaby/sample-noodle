@@ -1,6 +1,7 @@
 // Sample App API
 
 var os = require('os');
+var pkg = require('./package.json');
 
 module.exports = {
 	
@@ -13,6 +14,8 @@ module.exports = {
 		// Send JSON response
 		callback({
 			code: 0,
+			name: pkg.name,
+			version: pkg.version,
 			query: args.query,
 			random: Math.random(),
 			description: "Hello there!",

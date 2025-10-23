@@ -3,7 +3,7 @@
 A very simple auto-self-installing app to demo the capabilities of PoolNoodle.
 
 ```sh
-noodle install github:jhuckaby/sample-noodle#v1.0.4
+noodle install github:jhuckaby/sample-noodle#v1.0.5
 ```
 
 Ref: https://github.com/jhuckaby/PoolNoodle
