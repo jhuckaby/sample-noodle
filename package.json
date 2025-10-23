@@ -1,6 +1,6 @@
 {
 	"name": "sample-noodle",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "A very simple app to demo the capabilities of PoolNoodle.",
 	"main": "api.js",
 	"keywords": [
